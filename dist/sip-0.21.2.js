@@ -10733,7 +10733,7 @@ class Transport {
         }
         // Use the explicit header protocol if defined, but fall back to the
         // server's indicated scheme
-        if (this.configuration.headerProtocol !== "") {
+        if (typeof this.configuration.headerProtocol === "string" && this.configuration.headerProtocol !== "") {
             this._protocol = this.configuration.headerProtocol.toUpperCase();
         }
         else {
